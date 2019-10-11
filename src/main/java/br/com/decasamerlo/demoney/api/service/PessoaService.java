@@ -12,7 +12,7 @@ import br.com.decasamerlo.demoney.api.repository.PessoaRepository;
 public class PessoaService {
 	
 	@Autowired
-	PessoaRepository pessoaRepository;
+	private PessoaRepository pessoaRepository;
 
 	public Pessoa atualizar(Long codigo, Pessoa pessoa) {
 		Pessoa pessoaSalva = buscarPessoaPeloCodigo(codigo);
@@ -26,7 +26,7 @@ public class PessoaService {
 		pessoaRepository.save(pessoaSalva);
 	}
 
-	private Pessoa buscarPessoaPeloCodigo(Long codigo) {
+	public Pessoa buscarPessoaPeloCodigo(Long codigo) {
 		return pessoaRepository.findById(codigo).orElseThrow(() -> new EmptyResultDataAccessException(1));
 	}
 	
