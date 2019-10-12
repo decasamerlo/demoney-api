@@ -25,6 +25,7 @@ import br.com.decasamerlo.demoney.api.event.RecursoCriadoEvent;
 import br.com.decasamerlo.demoney.api.exceptionhandler.DemoneyExceptionHandler.Erro;
 import br.com.decasamerlo.demoney.api.model.Lancamento;
 import br.com.decasamerlo.demoney.api.repository.LancamentoRepository;
+import br.com.decasamerlo.demoney.api.repository.filter.LancamentoFilter;
 import br.com.decasamerlo.demoney.api.service.LancamentoService;
 import br.com.decasamerlo.demoney.api.service.exception.PessoaInexistenteOuInativaException;
 
@@ -45,8 +46,8 @@ public class LancamentoResource {
 	private MessageSource messageSource;
 
 	@GetMapping
-	public List<Lancamento> listar() {
-		return lancamentoRepository.findAll();
+	public List<Lancamento> pesquisar(LancamentoFilter lancamentoFilter) {
+		return lancamentoRepository.filtrar(lancamentoFilter);
 	}
 
 	@GetMapping("/{codigo}")
