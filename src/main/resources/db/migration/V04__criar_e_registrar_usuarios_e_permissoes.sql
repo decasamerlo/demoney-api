@@ -30,7 +30,7 @@ INSERT INTO permissao (codigo, descricao) VALUES (5, 'ROLE_PESQUISAR_PESSOA');
 
 INSERT INTO permissao (codigo, descricao) VALUES (6, 'ROLE_CADASTRAR_LANCAMENTO');
 INSERT INTO permissao (codigo, descricao) VALUES (7, 'ROLE_REMOVER_LANCAMENTO');
-INSERT INTO permissao (codigo, descricao) VALUES (8, 'ROLE_REMOVER_LANCAMENTO');
+INSERT INTO permissao (codigo, descricao) VALUES (8, 'ROLE_PESQUISAR_LANCAMENTO');
 
 -- admin
 INSERT INTO usuario_permissao (codigo_usuario, codigo_permissao) VALUES (1, 1);
